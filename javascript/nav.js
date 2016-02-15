@@ -3,26 +3,30 @@ var messageArea = document.getElementById('output');
 var userText = document.getElementById('userTextInput');
 var clearButton = document.getElementById('clearButton');
 var output = document.getElementById('output');
-var msg1 = document.getElementById('meg--0');
 
-
+//EVENT LISTENERS
 clearButton.addEventListener('click', clearButtonFunc);
 clearButton.addEventListener('click', check);
-userText.addEventListener('keyup', userTextFunc);
 document.addEventListener('keyup', getEnter)
 
-function userTextFunc() {
-	console.log("user typing...", userText.value);
-}
 
 function getEnter(e) {
-	if (e.which == 13) {
+	if (e.which === 13) {
 	console.log("enter");
-	console.log(event.target.value);
-	console.log(output.childNodes);
 
-	
-	}
+	var currentMessage = Chatty.addMessage(userText.value);
+	var newArray = Chatty.getMessage();
+	console.log(newArray);
+
+	var msgOutput = document.getElementById('messageOutput'); 
+
+	msgOutput.innerHTML = newArray;
+	console.log(userText.value);
+	console.log(output);
+	// console.log(output.appendChild(userText.value));		
+
+	userText.value = "";
+	};
 }
 
 function check() {
@@ -34,7 +38,7 @@ function check() {
 }
 
 function clearButtonFunc() {
-	console.log("messageArea", userText.value);
+	console.log("messageArea", messageArea);
 	messageArea.innerHTML = "";
 }
 

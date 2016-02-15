@@ -13,7 +13,12 @@ var Chatty= (function () {
 			});
 		loader.open("GET", "json/msgs.json");
 		loader.send();
-		}
+
+		},
+		getCurrentMessage: function() {
+			return messageArray;
+		},
+
 	}
 })();
 

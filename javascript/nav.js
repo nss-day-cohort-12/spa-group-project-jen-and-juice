@@ -5,14 +5,7 @@ var clearButton = document.getElementById('clearButton');
 //EVENT LISTENERS
 clearButton.addEventListener('click', clearButtonFunc);
 clearButton.addEventListener('click', check);
-document.querySelector("div").addEventListener("click", function(event) {
-  console.log(event);
-
-  // Handle the click event on any DOM element with a certain class
-  if (event.target.className === "deleteButton") {
-    console.log(event.target.id);
-  }
-})
+document.querySelector("div").addEventListener("click", Chatty.deleteMessage);
 
 
 document.addEventListener('keyup', getEnter)

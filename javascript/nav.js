@@ -5,6 +5,15 @@ var clearButton = document.getElementById('clearButton');
 //EVENT LISTENERS
 clearButton.addEventListener('click', clearButtonFunc);
 clearButton.addEventListener('click', check);
+document.querySelector("div").addEventListener("click", function(event) {
+  console.log(event);
+
+  // Handle the click event on any DOM element with a certain class
+  if (event.target.className === "deleteButton") {
+    console.log(event.target.id);
+  }
+})
+
 
 document.addEventListener('keyup', getEnter)
 var msgOutput = document.getElementById('messageOutput'); 
@@ -32,15 +41,13 @@ function readyClearButton() {
 
 function check() {
 	// console.log(clearMessage.innerHTML.indexOf(0));	
-	if (clearMessage.innerHTML.indexOf(0) < 0) {
+	if (messageContainer.innerHTML.indexOf(0) < 0) {
 		clearButton.disabled = true;
 		clearButton.classList.add('disabled');
 	}
 }
 
 function clearButtonFunc() {
-	console.log("messageArea", msgOutput);
-	msgOutput.innerHTML = "";
 	output.innerHTML = "";
 
 }

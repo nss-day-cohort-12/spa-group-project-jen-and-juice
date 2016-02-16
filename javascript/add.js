@@ -2,7 +2,7 @@ var Chatty = (function (prevChatty) {
 	var activeMessage = [];
 
 	prevChatty.addMessage = function(message) {
-		activeMessage.push(message);
+		activeMessage.unshift(message);
 	}
 
 	prevChatty.getMessage = function() {

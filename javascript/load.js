@@ -15,10 +15,6 @@ var Chatty= (function () {
 		loader.send();
 
 		},
-		getCurrentMessage: function() {
-			return messageArray;
-		},
-
 	}
 })();
 
@@ -29,8 +25,10 @@ function writeToDOM(callback) {
 	callback.forEach(function(object){
 		var currentMessage = object.msg;
 		var msgString= "";
-		msgString += `<div id="messsage--${counter}" class="msg" ><p>${currentMessage}</p>`;
-		msgString += `<button id="button--${counter}" class="deleteButton">delete</button></div>`;
+		msgString += `<div id="messsage--${counter}" class="msg">`;
+		msgString += `<button id="button--${counter}" class="deleteButton">Delete</button>`;
+		msgString += `<p>${currentMessage}</p>`;
+		msgString += `</div>`;
 		output.innerHTML+= msgString;	
 		counter ++;
 		});	

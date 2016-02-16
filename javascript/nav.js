@@ -1,52 +1,63 @@
 
-var messageArea = document.getElementById('output');
 var userText = document.getElementById('userTextInput');
 var clearButton = document.getElementById('clearButton');
-var output = document.getElementById('output');
+var msgOutput = document.getElementById('messageOutput'); 
 
 //EVENT LISTENERS
 clearButton.addEventListener('click', clearButtonFunc);
 clearButton.addEventListener('click', check);
 document.addEventListener('keyup', getEnter)
-
+var counter = 5;
 
 function getEnter(e) {
 	if (e.which === 13) {
-	console.log("enter");
+	// console.log("enter");
 
-	var currentMessage = Chatty.addMessage(userText.value);
-	var newArray = Chatty.getMessage();
-	console.log(newArray);
+		var currentMessage = Chatty.addMessage(userText.value);
 
-	var msgOutput = document.getElementById('messageOutput'); 
+		var array = Chatty.getMessage();
+			// console.log(array);
 
-	msgOutput.innerHTML = newArray;
-	console.log(userText.value);
-	console.log(output);
-	// console.log(output.appendChild(userText.value));		
+		newArray = array.slice(0,1);
+			// console.log(newArray);
+			// console.log(counter);
+			
+		var addMsg= "";
+		addMsg += `<div id="messsage--${counter}" class="newMsg">`;
+		addMsg += `<button id="button--${counter}" class="deleteButton">Delete</button>`;
+		addMsg += `<p>${newArray}</p>`;
+		addMsg += `</div>`;
+		console.log(addMsg);
+		msgOutput.innerHTML += addMsg;	
+		counter++;
+		
+			// console.log(userText.value);
+			// console.log(output);	
 
-	userText.value = "";
+		userText.value = "";
+		readyClearButton();
 	};
 }
 
+
+function readyClearButton() {
+	console.log("hello mr uncheck");
+		clearButton.disabled = false;
+}
+
 function check() {
-// console.log(messageArea.innerHTML.indexOf(0));	
-	if (messageArea.innerHTML.indexOf(0) < 0) {
+	// console.log(clearMessage.innerHTML.indexOf(0));	
+	if (clearMessage.innerHTML.indexOf(0) < 0) {
 		clearButton.disabled = true;
-		console.log("disabled");
 	}
 }
 
 function clearButtonFunc() {
-	console.log("messageArea", messageArea);
-	messageArea.innerHTML = "";
+	console.log("messageArea", msgOutput);
+	msgOutput.innerHTML = "";
+	output.innerHTML = "";
+
 }
-
-
-
-
-
-
 
 
 

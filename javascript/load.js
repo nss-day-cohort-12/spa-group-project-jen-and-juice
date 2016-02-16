@@ -13,25 +13,28 @@ var Chatty= (function () {
 			});
 		loader.open("GET", "json/msgs.json");
 		loader.send();
-
 		},
 	}
 })();
 
-function writeToDOM(callback) {
-	var output = document.getElementById("output"); 
-	var counter= 0;
-	console.log(callback);
-	callback.forEach(function(object){
-		var currentMessage = object.msg;
+function DomBuilder(currentMessage, counter) {
 		var msgString= "";
 		msgString += `<div id="messsage--${counter}" class="msg">`;
 		msgString += `<button id="button--${counter}" class="deleteButton">Delete</button>`;
 		msgString += `<p>${currentMessage}</p>`;
 		msgString += `</div>`;
-		output.innerHTML+= msgString;	
+		output.innerHTML+= msgString;		
+}
+
+function writeToDOM(callback) {
+	var output = document.getElementById("output"); 
+	var counter= 0;
+		// console.log(callback);
+	callback.forEach(function(object){
+		var currentMessage = object.msg;
+		DomBuilder(currentMessage,counter);
 		counter ++;
-		});	
+	});	
 }
 Chatty.loadMessages(writeToDOM);
 

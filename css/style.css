@@ -23,7 +23,7 @@ img {
 	border-radius: 5px;
 	padding: 0 2.75%;
 	background-color: rgb(233,233,233);
-	border: 1px solid black;
+	border: 1px outset black;
 }
 .deleteButton {
 	float: right;
@@ -68,6 +68,11 @@ img {
 	float: left;
 	width: 90%;
 	box-shadow: 1px 1px 3px grey;
+}
+.disabled {
+	font-weight: bold;
+	color: #fff;
+
 }
 .msg:nth-child(odd) {
 	background-color: #4EBFFA;

@@ -1,5 +1,3 @@
-
-
 .container-fluid {
 	width: 90%;
 	margin: 0 auto;
@@ -8,6 +6,12 @@
 	background-color: white;
 	position: fixed;
 	width: 85%;
+}
+.dark {
+	background-color: black;
+}
+.largeText {
+	font-size: 2em;
 }
 img {
 	width: 10%;
@@ -42,7 +46,7 @@ img {
 }
 .output {
 	border: 2px solid black;
-	margin-top: 80px;
+	margin-top: 140px;
 	padding: 10px;
 	overflow: auto;
 }
@@ -54,7 +58,6 @@ img {
 	padding: 10px;
 	width: 90%;
 	box-shadow: 1px 1px 3px grey;
-	
 }
 .newMsg:nth-child(even) {
 	background-color: #4EBFFA;
@@ -72,7 +75,6 @@ img {
 .disabled {
 	font-weight: bold;
 	color: #fff;
-
 }
 .msg:nth-child(odd) {
 	background-color: #4EBFFA;
@@ -80,6 +82,18 @@ img {
 }
 .msg:hover {
 	box-shadow: 3px 3px 5px black;
+}
+.selectTheme{
+	display: inline-block;
+	margin: 10px;
+}
+.selectTheme span {
+	font-size: 16px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+.selectTheme label {
+	margin-right: 10px;
 }
 
 @media (min-width: 768px) {
@@ -95,8 +109,7 @@ img {
 	.userTextInput {
 		margin: 25px 0 0 30px;
 		width: 70%;
-	}
-		
+	}	
 }
 
 

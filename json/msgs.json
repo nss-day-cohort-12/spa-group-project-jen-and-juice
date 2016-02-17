@@ -1,19 +1,19 @@
 {
 	"message": [
 		{
-			"msg": "Photo booth truffaut tofu master cleanse meggings. Banh mi semiotics poutine hammock, thundercats tofu fashion axe etsy brunch."
+			"msg": "Hi There."
 		},
 		{
-			"msg": "Selfies food truck roof party, church-key health goth selvage shabby chic aesthetic tote bag ugh photo booth kitsch vinyl."
+			"msg": "Racoonbot is Raccoon's built-in robot, here to help you keep your own notes and private files in order."
 		},
 		{
-			"msg": "You probably haven't heard of them cliche mlkshk, truffaut chartreuse normcore roof party pork belly listicle organic hoodie food truck."
+			"msg": "Messages you send and files you upload to Racoonbot are searchable and visible only to you. Just click on Racoonbot in your Direct Messages list to get started."
 		},
 		{
-			"msg": "Blue bottle waistcoat health goth mumblecore swag kombucha XOXO salvia fap, heirloom meggings asymmetrical sustainable semiotics."
+			"msg": "You can configure Racoonbot to respond to your team members. While there are plenty of work-related uses for this, most teams just use the feature for fun."
 		},
 		{
-			"msg": "Pour-over irony quinoa XOXO tumblr vegan, leggings semiotics ramps tofu art party disrupt kickstarter."
+			"msg": "Your team can set up Racoonbot to say things programmatically by creating a new Racoonbot integration. This will give your team a unique URL for posting messages as Racoonbot via HTTP POST."
 		}
 
 	]

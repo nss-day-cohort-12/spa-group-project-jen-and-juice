@@ -1,65 +1,43 @@
+$(document).ready(function() {
 
-//CACHE DOM
-var msgOutput = document.getElementById('messageOutput'); 
-var clearButton = document.getElementById('clearButton');
-var messageContainer = document.getElementById('messageContainer');
-var msgOutput = document.getElementById('messageOutput'); 
-var userText = document.getElementById('userTextInput');
-
-var dark = document.getElementById('checkDarkTheme');
-var text = document.getElementById('checkLargeText');
-
-
-//EVENT LISTENERS
-clearButton.addEventListener('click', clearButtonFunc);
-clearButton.addEventListener('click', check);
-document.querySelector("div").addEventListener("click", Chatty.deleteMessage);
-dark.addEventListener('click', darkTheme);
-text.addEventListener('click', largeText);
-document.addEventListener('keyup', add)
-
-
-function add(e) {
+// UPON ENTER TAKE USER INPUT VALUE 
+$('.userTextInput').keyup(function (e) {
 	if (e.which === 13) {
-	// console.log("enter");
-		var currentMessage = Chatty.addMessage(userText.value);
+	// console.log('enter");
+		var currentMessage = Chatty.addMessage($('#userTextInput').val());
 		var array = Chatty.getMessage();
-			// console.log(array);
-			// console.log(userText.value);
-			// console.log(output);	
-		userText.value = "";
-		readyClearButton();
+
+		$('#userTextInput').val("");
+		$('#clearButton').attr('enabled');
+		$('#clearButton').removeClass('disabled');
 	};
-}
+})
+// TRIGGERS DELETE MESSAGE FUNCTION IN "delete.js"
+$('div').click(Chatty.deleteMessage);
 
-function readyClearButton() {
-	// console.log("hello mr uncheck");
-		clearButton.disabled = false;
-		clearButton.classList.remove('disabled');
-}
+// CLEARS ALL MESSAGES
+$('#clearButton').click(function () {
+	$("#output").html("");
+})
 
-function check() {
+// DISABLES CLEAR ALL BUTTON 
+$('#clearButton').click(function () {
 	// console.log(clearMessage.innerHTML.indexOf(0));	
 	if (messageContainer.innerHTML.indexOf(0) < 0) {
-		clearButton.disabled = true;
-		clearButton.classList.add('disabled');
+		$('#clearButton').attr('disabled');
+		$('#clearButton').addClass('disabled');
 	}
-}
+})
 
-function clearButtonFunc() {
-	output.innerHTML = "";
-}
-
-function darkTheme() {
-	console.log("dark");
-	messageContainer.classList.toggle('dark');
-}
-function largeText() {
-	console.log("theme");
-	output.classList.toggle('largeText')
-}
+// TOGGLES LARGE TEXT
+$('#checkLargeText').click (function () {
+	$("#output").toggleClass('largeText');
+})
+// TOGGLES DARK THEME
+$('#checkDarkTheme').click(function () {
+	$('#messageContainer').toggleClass('dark');
+})
 
 
-
-
+})
 

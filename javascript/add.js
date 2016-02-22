@@ -4,23 +4,19 @@ var Chatty = (function (prevChatty) {
 
 	prevChatty.addMessage = function(message) {
 		activeMessage.unshift(message);
-		// console.log("activeMessage", activeMessage);
-
+			// console.log("activeMessage", activeMessage);
 		newArray = activeMessage.slice(0,1);
-		// console.log("newArray", newArray);
-			// console.log(newArray);
+			// console.log("newArray", newArray);
 			// console.log(counter);
-
 		DomBuilder(newArray, counter);	
 		counter++;
 	};
-
 	prevChatty.getMessage = function() {
 		return activeMessage;
 	}
 
 	return prevChatty;
-
+	
 })(Chatty || {});
 
 
